@@ -47,6 +47,8 @@ stages:
         Contents: '**'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
         OverWrite: true
+    # List files from Build Artifacts Staging Directory - After
+    - bash: echo after copying to build artifact directory; ls -R $(Build.ArtifactStagingDirectory)
     # Publish build artifacts (publish build to Azure Pipelines)
     - task: PublishBuildArtifacts@1
       inputs:
